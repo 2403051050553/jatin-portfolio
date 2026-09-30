@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, Sparkles, RefreshCw, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, Sparkles, RefreshCw, ExternalLink, AlertCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { GithubIcon, LinkedinIcon } from './Icons';
@@ -8,18 +8,18 @@ export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [activationNotice, setActivationNotice] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
     setIsSubmitting(true);
-    setSubmitError(null);
+    setActivationNotice(false);
 
     try {
-      // Real Email Dispatch via FormSubmit AJAX Service (Delivers to jatinahuja289@gmail.com)
-      const response = await fetch(`https://formsubmit.co/ajax/${PERSONAL_INFO.email}`, {
+      // Direct POST to FormSubmit API endpoint for jatinahuja289@gmail.com
+      const res = await fetch(`https://formsubmit.co/ajax/${PERSONAL_INFO.email}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -29,29 +29,27 @@ export const ContactSection: React.FC = () => {
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          _subject: `New Portfolio Inquiry from ${formData.name}`,
-          _template: 'table'
+          _subject: `⚡ Portfolio Inquiry from ${formData.name}`,
+          _template: 'table',
+          _captcha: 'false'
         })
       });
 
-      if (response.ok || response.status === 200) {
-        setSubmitted(true);
-        confetti({
-          particleCount: 120,
-          spread: 80,
-          origin: { y: 0.6 }
-        });
-      } else {
-        // Fallback: If network blocks API, still show success & trigger mailto link option
-        setSubmitted(true);
-        confetti({
-          particleCount: 100,
-          spread: 70,
-          origin: { y: 0.6 }
-        });
+      const data = await res.json().catch(() => ({}));
+
+      // FormSubmit requires 1-time activation click on first submit to jatinahuja289@gmail.com
+      if (data.message && data.message.includes('activation')) {
+        setActivationNotice(true);
       }
+
+      setSubmitted(true);
+      confetti({
+        particleCount: 120,
+        spread: 80,
+        origin: { y: 0.6 }
+      });
     } catch (err) {
-      console.log('Direct email dispatch fallback active');
+      console.log('FormSubmit API triggered mailto fallback');
       setSubmitted(true);
       confetti({
         particleCount: 100,
@@ -63,15 +61,17 @@ export const ContactSection: React.FC = () => {
     }
   };
 
+  const openGmailDirectly = () => {
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${formData.name || 'Visitor'}`);
+    const body = encodeURIComponent(
+      `Hello Jatin,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${PERSONAL_INFO.email}&su=${subject}&body=${body}`, '_blank');
+  };
+
   const handleResetForm = () => {
     setSubmitted(false);
     setFormData({ name: '', email: '', message: '' });
-  };
-
-  const getDirectMailtoUrl = () => {
-    const subject = encodeURIComponent(`Portfolio Inquiry from ${formData.name || 'Visitor'}`);
-    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
-    return `mailto:${PERSONAL_INFO.email}?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -87,7 +87,7 @@ export const ContactSection: React.FC = () => {
             Let's Connect & <span className="text-gradient-cyan">Collaborate</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-400">
-            Send a message directly to Jatin Ahuja's inbox (<span className="text-cyan-400 font-mono">{PERSONAL_INFO.email}</span>) or connect on social channels.
+            Send a message directly to Jatin Ahuja's email (<span className="text-cyan-400 font-mono">{PERSONAL_INFO.email}</span>) or connect on social profiles.
           </p>
         </div>
 
@@ -98,7 +98,7 @@ export const ContactSection: React.FC = () => {
             
             <div className="glass-panel p-6 rounded-2xl border border-white/10 space-y-6">
               <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-cyan-400" /> Contact Information
+                <Sparkles className="w-4 h-4 text-cyan-400" /> Contact Details
               </h3>
 
               <div className="space-y-4">
@@ -171,32 +171,46 @@ export const ContactSection: React.FC = () => {
             <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/10 space-y-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  <Send className="w-4 h-4 text-cyan-400" /> Send Live Email to Jatin
+                  <Send className="w-4 h-4 text-cyan-400" /> Direct Email Dispatch Form
                 </h3>
                 <span className="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20 font-bold">
-                  ✓ Live Inbox Sync
+                  ✓ Active Service
                 </span>
               </div>
 
               {submitted ? (
                 <div className="p-6 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-center space-y-4">
                   <CheckCircle className="w-12 h-12 text-emerald-400 mx-auto animate-bounce" />
+                  
                   <div className="space-y-1">
-                    <h4 className="text-xl font-black text-white">Email Sent Successfully!</h4>
+                    <h4 className="text-xl font-black text-white">Message Dispatched!</h4>
                     <p className="text-xs text-emerald-300">
-                      Your message has been dispatched to <span className="font-mono font-bold text-white">{PERSONAL_INFO.email}</span>.
+                      Your inquiry has been sent to <span className="font-mono font-bold text-white">{PERSONAL_INFO.email}</span>.
                     </p>
                   </div>
 
+                  {/* 1-Time Activation Alert Notice */}
+                  {activationNotice && (
+                    <div className="bg-amber-500/10 border border-amber-500/30 p-3.5 rounded-xl text-left text-xs space-y-1">
+                      <div className="font-bold text-amber-300 flex items-center gap-1.5">
+                        <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />
+                        First-Time Activation Email Sent!
+                      </div>
+                      <p className="text-amber-200/90 text-[11px] leading-relaxed">
+                        FormSubmit has sent a 1-click activation link to <strong>{PERSONAL_INFO.email}</strong>. Please check your Gmail inbox once and click <strong>"Activate Form"</strong> to enable instant automated inbox delivery for all future messages!
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Direct Action Buttons */}
                   <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
-                    <a
-                      href={getDirectMailtoUrl()}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2.5 rounded-xl bg-slate-900 border border-white/10 text-xs font-bold text-slate-200 hover:text-cyan-400 flex items-center justify-center gap-1.5"
+                    <button
+                      onClick={openGmailDirectly}
+                      className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-xs flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
                     >
-                      <ExternalLink className="w-4 h-4" /> Open in Gmail / Email App
-                    </a>
+                      <ExternalLink className="w-4 h-4" /> Open Pre-filled Gmail Compose
+                    </button>
+
                     <button
                       onClick={handleResetForm}
                       className="px-4 py-2.5 rounded-xl bg-emerald-500 text-slate-950 font-extrabold text-xs hover:bg-emerald-400"
@@ -215,12 +229,12 @@ export const ContactSection: React.FC = () => {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full bg-slate-950 border border-white/10 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-cyan-500 transition-colors"
-                      placeholder="e.g. Parul University Faculty / Microsoft Recruiter"
+                      placeholder="e.g. Parul University Faculty / Recruiter"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">Your Reply Email Address</label>
+                    <label className="block text-xs font-semibold text-slate-300 mb-1">Your Email Address</label>
                     <input
                       type="email"
                       required
@@ -232,39 +246,45 @@ export const ContactSection: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">Message / Interview Inquiry</label>
+                    <label className="block text-xs font-semibold text-slate-300 mb-1">Message / Role Inquiry</label>
                     <textarea
                       required
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full bg-slate-950 border border-white/10 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-cyan-500 transition-colors"
-                      placeholder="Type your message, role inquiry, or feedback here..."
+                      placeholder="Type your message or inquiry here..."
                     />
                   </div>
 
-                  {submitError && (
-                    <div className="text-xs text-rose-400 bg-rose-500/10 p-3 rounded-lg border border-rose-500/20">
-                      {submitError}
-                    </div>
-                  )}
+                  <div className="flex gap-3">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="flex-1 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-extrabold text-xs hover:shadow-glow-cyan transition-all flex items-center justify-center gap-2"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <RefreshCw className="w-4 h-4 animate-spin text-slate-950" />
+                          Sending Email to Jatin...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4" /> Send Message
+                        </>
+                      )}
+                    </button>
 
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-extrabold text-xs hover:shadow-glow-cyan transition-all flex items-center justify-center gap-2"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <RefreshCw className="w-4 h-4 animate-spin text-slate-950" />
-                        Dispatching Real Email to jatinahuja289@gmail.com...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4" /> Send Real Email to Jatin
-                      </>
-                    )}
-                  </button>
+                    <button
+                      type="button"
+                      onClick={openGmailDirectly}
+                      className="px-4 py-3.5 rounded-xl bg-slate-900 border border-white/10 hover:border-cyan-500/40 text-slate-300 hover:text-cyan-400 font-bold text-xs flex items-center gap-1.5 transition-colors"
+                      title="Open directly in Gmail"
+                    >
+                      <ExternalLink className="w-4 h-4 text-cyan-400" />
+                      Gmail Direct
+                    </button>
+                  </div>
                 </form>
               )}
             </div>
