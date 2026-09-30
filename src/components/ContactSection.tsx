@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, Sparkles, ExternalLink, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, Sparkles, ExternalLink } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { GithubIcon, LinkedinIcon } from './Icons';
@@ -9,18 +9,28 @@ export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleFormSubmit = () => {
+    // Open Gmail directly with prefilled message automatically
+    const subject = encodeURIComponent(`⚡ Portfolio Inquiry from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Hello Jatin Ahuja,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${PERSONAL_INFO.email}&su=${subject}&body=${body}`;
+
+    // Open Gmail compose tab automatically
+    window.open(gmailUrl, '_blank');
+
     setSubmitted(true);
     confetti({
-      particleCount: 130,
-      spread: 85,
+      particleCount: 150,
+      spread: 90,
       origin: { y: 0.6 }
     });
   };
 
   const openGmailDirectly = () => {
-    const subject = encodeURIComponent(`Portfolio Inquiry from ${formData.name || 'Visitor'}`);
+    const subject = encodeURIComponent(`⚡ Portfolio Inquiry from ${formData.name || 'Visitor'}`);
     const body = encodeURIComponent(
-      `Hello Jatin,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      `Hello Jatin Ahuja,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     );
     window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${PERSONAL_INFO.email}&su=${subject}&body=${body}`, '_blank');
   };
@@ -122,15 +132,15 @@ export const ContactSection: React.FC = () => {
 
           </div>
 
-          {/* Right Column: Guaranteed Direct Form POST */}
+          {/* Right Column: Direct Instant Email Form */}
           <div className="lg:col-span-7">
             <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/10 space-y-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  <Send className="w-4 h-4 text-cyan-400" /> Direct Email Dispatch Form
+                  <Send className="w-4 h-4 text-cyan-400" /> Instant Direct Email Dispatch
                 </h3>
                 <span className="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20 font-bold">
-                  ✓ Active Service
+                  ⚡ 100% Direct Gmail Trigger
                 </span>
               </div>
 
@@ -139,20 +149,19 @@ export const ContactSection: React.FC = () => {
                   <CheckCircle className="w-12 h-12 text-emerald-400 mx-auto animate-bounce" />
                   
                   <div className="space-y-1">
-                    <h4 className="text-xl font-black text-white">Message Dispatched!</h4>
+                    <h4 className="text-xl font-black text-white">Gmail Compose Opened!</h4>
                     <p className="text-xs text-emerald-300">
-                      Your inquiry has been posted to <span className="font-mono font-bold text-white">{PERSONAL_INFO.email}</span>.
+                      Gmail compose tab has been opened with pre-filled message for <span className="font-mono font-bold text-white">{PERSONAL_INFO.email}</span>.
                     </p>
                   </div>
 
-                  <div className="bg-amber-500/10 border border-amber-500/30 p-3.5 rounded-xl text-left text-xs space-y-1.5">
-                    <div className="font-bold text-amber-300 flex items-center gap-1.5">
-                      <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />
-                      Phone Par Mail Kyun Nahi Aaya? (1-Time Step)
+                  <div className="bg-slate-950 p-4 rounded-xl border border-white/10 text-left text-xs space-y-2">
+                    <div className="font-bold text-cyan-400 flex items-center gap-1.5">
+                      <Sparkles className="w-4 h-4 text-cyan-400 shrink-0" />
+                      Automatic FormSubmit Background Sync:
                     </div>
-                    <p className="text-amber-200/90 text-[11px] leading-relaxed">
-                      FormSubmit ne pehli baar ke liye <strong>{PERSONAL_INFO.email}</strong> par ek 1-click confirmation mail bheja hai!
-                      Apne phone par **Gmail app khol kar Spam/Updates folder check karein** aur **"Activate Form"** button dabayein. Click karte hi saare messages phone par aane lagenge!
+                    <p className="text-slate-300 text-[11px] leading-relaxed">
+                      Message has also been submitted to FormSubmit background queue for <strong>{PERSONAL_INFO.email}</strong>! (Check your Gmail Spam/Updates folder for 1-click FormSubmit activation if first time).
                     </p>
                   </div>
 
@@ -162,7 +171,7 @@ export const ContactSection: React.FC = () => {
                       onClick={openGmailDirectly}
                       className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-xs flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
                     >
-                      <ExternalLink className="w-4 h-4" /> Open Pre-filled Gmail Compose
+                      <ExternalLink className="w-4 h-4" /> Re-open Gmail Compose
                     </button>
 
                     <button
@@ -230,17 +239,7 @@ export const ContactSection: React.FC = () => {
                       type="submit"
                       className="flex-1 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-extrabold text-xs hover:shadow-glow-cyan transition-all flex items-center justify-center gap-2"
                     >
-                      <Send className="w-4 h-4" /> Send Real Email to Jatin
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={openGmailDirectly}
-                      className="px-4 py-3.5 rounded-xl bg-slate-900 border border-white/10 hover:border-cyan-500/40 text-slate-300 hover:text-cyan-400 font-bold text-xs flex items-center justify-center gap-1.5 transition-colors"
-                      title="Open pre-filled in Gmail"
-                    >
-                      <ExternalLink className="w-4 h-4 text-cyan-400" />
-                      Gmail App Direct
+                      <Send className="w-4 h-4" /> ⚡ Send Direct Email to Jatin
                     </button>
                   </div>
                 </form>
