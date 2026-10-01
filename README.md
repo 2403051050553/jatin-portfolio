@@ -1,68 +1,83 @@
-# 🏆 Premium Recruiter & Engineering Portfolio - Ahuja Jatin Tehalram
+# 🚀 Jatin Tehalram Ahuja — Portfolio
 
-A state-of-the-art, high-converting engineering portfolio and executive recruiter deck designed for **Ahuja Jatin Tehalram (Jatin Ahuja)**, B.Tech Computer Science Engineering student @ Parul University (Semester 5th, CGPA 7.04/10.0, Graduating 2027), targeting **Microsoft Software Engineering Internship / Placement (2027)**.
+<div align="center">
 
----
+![Portfolio Preview](https://jatin-ahuja-portfolio.vercel.app/assets/jatin-profile-blazer.jpg)
 
-## 🌟 Key Integrated Concepts (Concept 1 + Concept 3 + Concept 5)
+### 🌐 [Live Portfolio → jatin-ahuja-portfolio.vercel.app](https://jatin-ahuja-portfolio.vercel.app)
 
-- 👔 **Blazer Portrait Card**: High-res professional blazer photograph of Jatin Ahuja with glowing cyber halo & target Microsoft SDE badge.
-- 📄 **Interactive Resume Viewer + PDF Export**: Dual-mode resume viewer modal displaying full OCR resume details + 1-click PDF download & native browser print option.
-- 💻 **Best 3–4 Projects with System Design Architecture**: 
-  - **Hospital Management System**: Multi-role full-stack web app with Spring Boot REST API, React UI, MySQL database, and interactive visual component diagram.
-  - **AI Interview Assistant Platform**: Real-time AI evaluation engine analyzing technical responses with interactive prompt simulator.
-  - **SocialBook / YouTube / Netflix / Uber Clones**: Responsive media interface suites.
-- ☕ **Java Core & DSA Playground**: 
-  - Code snippets with tab switcher (Custom HashMap O(1) hashing, Two Pointers algorithm, Spring Boot REST Controller, SQL Window functions).
-  - Problem statistics tracker featuring **LeetCode** (`2403051050553`), **HackerRank** (`Jatin Ahuja`), **Codeforces** (`Jatin_DSA2006`).
-- ⚡ **Executive Recruiter View Mode**: Mode toggle giving hiring managers a 30-second candidate pitch deck, **95% Microsoft SDE Fit Score**, competency radar, 1-click shortlist action, and quick contact details.
-- 🏆 **Verifiable Certifications**: Filterable gallery for AWS Cloud Foundations, AWS SimuLearn, IBM SkillsBuild, and HackerRank SQL Advanced (ID: `A56B8381C5FB`) & CSS (ID: `9202DC9B2272`).
-- 🐙 **GitHub Activity Stream**: Visual 2026 contribution grid (94+ commits) and pinned repository grid matching `github.com/2403051050553`.
-- 📱 **Fully Responsive Mobile UI**: Pixel-perfect responsive layout across mobile, tablet, and desktop devices.
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://jatin-ahuja-portfolio.vercel.app)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org)
+[![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite)](https://vite.dev)
+
+</div>
 
 ---
 
-## 🚀 How to Run Locally
+## 👨‍💻 About Me
 
-1. Open terminal in project folder:
-   ```bash
-   cd jatin-portfolio
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start Vite dev server:
-   ```bash
-   npm run dev
-   ```
-4. Build production bundle:
-   ```bash
-   npm run build
-   ```
+**Jatin Tehalram Ahuja** — B.Tech Computer Science Engineering Student at **Parul University**.
+
+- 🎯 Targeting **Microsoft SDE Internship & Placement 2027**
+- 💡 Specializing in **Java, Spring Boot, React, DSA & AI Applications**
+- 🏆 HackerRank SQL Advanced Certified | AWS Certified
+- 📍 India
 
 ---
 
-## 🌐 Deploying to Vercel (1-Click Deployment)
+## ✨ Portfolio Features
 
-### Method A: Vercel CLI (Recommended)
-```bash
-npm install -g vercel
-vercel login
-vercel --prod
+| Feature | Details |
+|---|---|
+| 🎨 **Design** | Dark theme, glassmorphism, smooth animations |
+| ⚡ **Performance** | Vite 8, optimized bundle, lazy loading |
+| 📱 **Responsive** | Mobile-first, works on all devices |
+| 🔗 **GitHub Activity** | Live GitHub contribution graph |
+| 📬 **Contact Form** | Working email via FormSubmit |
+| 🎉 **Confetti** | Interactive hire-me button with confetti! |
+
+---
+
+## 🛠️ Tech Stack
+
+```
+Frontend:   React 19 + TypeScript 6
+Build:      Vite 8
+Styling:    Tailwind CSS 4
+Icons:      Lucide React
+Hosting:    Vercel (Node 22)
 ```
 
-### Method B: GitHub + Vercel Dashboard
-1. Push the code to GitHub:
-   ```bash
-   git init
-   git add .
-   git commit -m "Deploy Ahuja Jatin Tehalram Engineering Portfolio"
-   git branch -M main
-   git remote add origin https://github.com/2403051050553/portfolio.git
-   git push -u origin main
-   ```
-2. Go to [vercel.com/new](https://vercel.com/new).
-3. Import your GitHub repository.
-4. Set Framework Preset: **Vite**.
-5. Click **Deploy**. Vercel will build and deploy the app live with custom SSL!
+---
+
+## 🚀 Run Locally
+
+```bash
+git clone https://github.com/2403051050553/jatin-portfolio.git
+cd jatin-portfolio
+npm install
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 📦 Deploy
+
+```bash
+npx vercel --prod --yes
+```
+
+Live at: **https://jatin-ahuja-portfolio.vercel.app**
+
+---
+
+<div align="center">
+
+**⭐ Star this repo if you like it!**
+
+[LinkedIn](https://linkedin.com/in/jatin-tehalram-ahuja) • [Portfolio](https://jatin-ahuja-portfolio.vercel.app) • [GitHub](https://github.com/2403051050553)
+
+</div>
