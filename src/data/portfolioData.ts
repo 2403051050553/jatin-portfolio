@@ -413,58 +413,40 @@ ORDER BY department_name, rank_in_dept;`
 
 export const GITHUB_REPOS: GitHubRepo[] = [
   {
-    name: 'SOCIALBOOK-CLONE',
-    description: 'THESE IS THE SOCIAL BOOK ITHS HELP FOR THE SOCIAL MEDIA CONNECTIONS',
-    language: 'HTML / CSS',
-    stars: 12,
-    forks: 4,
-    url: 'https://github.com/2403051050553/SOCIALBOOK-CLONE',
-    isPinned: true
+    name: 'jatin-portfolio',
+    description: 'Personal portfolio built with React, TypeScript, Vite, and Tailwind CSS.',
+    language: 'TypeScript',
+    url: 'https://github.com/2403051050553/jatin-portfolio'
   },
   {
-    name: 'MOVIES-DESIGN',
-    description: 'Movie layout & design system showcasing modern responsive streaming grid UI',
-    language: 'HTML',
-    stars: 8,
-    forks: 2,
-    url: 'https://github.com/2403051050553/MOVIES-DESIGN',
-    isPinned: true
+    name: 'student-grade-management',
+    description: 'Java 17 Spring Boot REST API for managing students and grades with JWT authentication and MySQL.',
+    language: 'Java',
+    url: 'https://github.com/2403051050553/student-grade-management'
+  },
+  {
+    name: 'LeetCode-Solutions',
+    description: 'Java algorithm practice with unit-tested array, string, and binary-search implementations.',
+    language: 'Java',
+    url: 'https://github.com/2403051050553/LeetCode-Solutions'
   },
   {
     name: 'Youtube-Clone',
-    description: 'THESE PROJECT OF THE HTML AND CSS PROJECT IS YOUTUBE CLONE',
+    description: 'Video-browsing homepage layout built with HTML and CSS, with original local SVG assets.',
     language: 'HTML / CSS',
-    stars: 15,
-    forks: 5,
-    url: 'https://github.com/2403051050553/Youtube-Clone',
-    isPinned: true
-  },
-  {
-    name: 'PROFILE-CARD',
-    description: 'profile using html and css with glassmorphic cards and hover state animations',
-    language: 'CSS',
-    stars: 6,
-    forks: 1,
-    url: 'https://github.com/2403051050553/PROFILE-CARD',
-    isPinned: true
+    url: 'https://github.com/2403051050553/Youtube-Clone'
   },
   {
     name: 'NETFLIX-CLONE',
-    description: 'THESE PROJECT IS THE LIKE TV SHOWS ENTERTAINMENT AND MOVIES PROJECT NAME IS NETFLIX',
+    description: 'Static streaming-service landing page concept built with HTML and CSS.',
     language: 'HTML / CSS',
-    stars: 18,
-    forks: 6,
-    url: 'https://github.com/2403051050553/NETFLIX-CLONE',
-    isPinned: true
+    url: 'https://github.com/2403051050553/NETFLIX-CLONE'
   },
   {
-    name: 'UBER-WEBSITE',
-    description: 'Uber ride request landing page UI clone built with pure HTML, CSS, and JS',
-    language: 'HTML',
-    stars: 10,
-    forks: 3,
-    url: 'https://github.com/2403051050553/UBER-WEBSITE',
-    isPinned: true
+    name: 'SPOTIFY-CLONE',
+    description: 'Static Spotify-inspired music landing page concept built with HTML and CSS.',
+    language: 'HTML / CSS',
+    url: 'https://github.com/2403051050553/SPOTIFY-CLONE'
   }
 ];
 

@@ -12,7 +12,7 @@ A personal portfolio built with React and TypeScript to present projects, techni
 ## Highlights
 
 - Responsive portfolio layout with project, education, certification, and contact sections
-- GitHub contribution section
+- Live GitHub contribution graph hosted by GitHub, with no hard-coded activity totals
 - Resume and recruiter-view experiences
 - Contact form integration
 - TypeScript build checks and Oxlint

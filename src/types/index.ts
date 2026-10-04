@@ -59,8 +59,5 @@ export interface GitHubRepo {
   name: string;
   description: string;
   language: string;
-  stars: number;
-  forks: number;
   url: string;
-  isPinned: boolean;
 }

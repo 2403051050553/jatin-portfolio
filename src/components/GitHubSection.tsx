@@ -1,5 +1,5 @@
 import React from 'react';
-import { GitFork, Star, Activity, Code } from 'lucide-react';
+import { Activity, Code, ExternalLink } from 'lucide-react';
 import { GITHUB_REPOS, PERSONAL_INFO } from '../data/portfolioData';
 import { GithubIcon } from './Icons';
 
@@ -17,13 +17,11 @@ export const GitHubSection: React.FC = () => {
             GitHub Activity & <span className="text-gradient-cyan">Repositories</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-400">
-            Active version control contributor with 94+ commits in 2026 across full-stack applications, frontend clones, and algorithm utilities.
+            Live contribution activity from GitHub, alongside selected projects. Contribution totals follow GitHub&apos;s own counting rules.
           </p>
         </div>
 
-        {/* GitHub Contribution Heatmap Card */}
         <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 space-y-6">
-          
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-slate-900 border border-white/10 flex items-center justify-center text-white">
@@ -31,12 +29,12 @@ export const GitHubSection: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                  94 Contributions in 2026
+                  Contribution activity
                   <span className="px-2 py-0.5 rounded text-[10px] bg-emerald-500/20 text-emerald-300 font-mono">
-                    Active Streak
+                    Live from GitHub
                   </span>
                 </h3>
-                <p className="text-xs text-slate-400">Target User Profile: github.com/2403051050553</p>
+                <p className="text-xs text-slate-400">Private activity is anonymized according to GitHub profile settings.</p>
               </div>
             </div>
 
@@ -50,25 +48,16 @@ export const GitHubSection: React.FC = () => {
             </a>
           </div>
 
-          {/* GitHub Activity Heatmap Screenshot Artifact Image */}
-          <div className="bg-slate-950 p-4 rounded-2xl border border-white/5 space-y-3 overflow-hidden">
-            <div className="text-xs font-mono text-slate-400 flex items-center justify-between">
-              <span>GitHub Contribution Grid Stream</span>
-              <span className="text-cyan-400">2026 Commit Ledger</span>
-            </div>
-            
-            <div className="rounded-xl overflow-hidden border border-white/10 bg-slate-900/60 p-2">
-              <img
-                src="/assets/github-contributions.png"
-                alt="Jatin Ahuja GitHub Contributions"
-                className="w-full h-auto object-cover rounded-lg opacity-90 hover:opacity-100 transition-opacity"
-              />
-            </div>
+          <div className="overflow-x-auto rounded-xl border border-white/10 bg-slate-950/70 p-3">
+            <img
+              src="https://github.com/users/2403051050553/contributions"
+              alt="Live GitHub contribution graph for Jatin Tehalram Ahuja"
+              loading="lazy"
+              className="mx-auto h-auto min-w-[663px] max-w-full opacity-90 transition-opacity hover:opacity-100"
+            />
           </div>
-
         </div>
 
-        {/* Pinned Repositories Grid */}
         <div className="space-y-4">
           <h3 className="text-lg font-bold text-white flex items-center gap-2">
             <Code className="w-4 h-4 text-cyan-400" /> Pinned Repositories
@@ -106,11 +95,8 @@ export const GitHubSection: React.FC = () => {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <span className="flex items-center gap-1 hover:text-amber-400">
-                      <Star className="w-3.5 h-3.5" /> {repo.stars}
-                    </span>
                     <span className="flex items-center gap-1 hover:text-cyan-400">
-                      <GitFork className="w-3.5 h-3.5" /> {repo.forks}
+                      View repository <ExternalLink className="w-3.5 h-3.5" />
                     </span>
                   </div>
                 </div>
@@ -118,7 +104,6 @@ export const GitHubSection: React.FC = () => {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
