@@ -1,92 +1,90 @@
-# Portfolio Website
+# Jatin Portfolio
 
-**Professional React portfolio showcasing full-stack & DSA engineering skills**
+[![CI](https://github.com/2403051050553/jatin-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/2403051050553/jatin-portfolio/actions/workflows/ci.yml)
+[![React](https://img.shields.io/badge/React-19-149eca?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-6-3178c6?logo=typescript)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-8-646cff?logo=vite)](https://vite.dev/)
 
-## Overview
+A personal portfolio built with React and TypeScript to present projects, technical interests, and professional background.
 
-A modern, responsive portfolio website built to showcase projects, technical skills, and professional achievements. Demonstrates frontend mastery with React, TypeScript, and modern styling practices.
+**Live site:** [jatin-ahuja-portfolio.vercel.app](https://jatin-ahuja-portfolio.vercel.app)
 
-## Live Demo
-🌐 **[jatin-ahuja-portfolio.vercel.app](https://jatin-ahuja-portfolio.vercel.app)**
+## Highlights
 
-## Tech Stack
+- Responsive portfolio layout with project, education, certification, and contact sections
+- GitHub contribution section
+- Resume and recruiter-view experiences
+- Contact form integration
+- TypeScript build checks and Oxlint
 
-**Frontend**
-- React 19
-- TypeScript 6
+## Tech stack
+
+- React 19 and TypeScript 6
 - Vite 8
 - Tailwind CSS 4
-- Lucide React (Icons)
+- Lucide React
+- Node.js 22 or newer
+- Vercel deployment
 
-**Deployment**
-- Vercel (Node 22)
+## Run locally
 
-## Features
+### Prerequisites
 
-- 🎨 Modern dark theme with glassmorphism design
-- ⚡ Lightning-fast performance (optimized Vite bundle)
-- 📱 Fully responsive (mobile-first approach)
-- 🔗 Live GitHub contribution graph integration
-- 📧 Working contact form via FormSubmit
-- 🎉 Interactive elements with smooth animations
-- 🌙 Dark mode optimized UI
+- Node.js 22 or newer (the repository includes an `.nvmrc`)
+- npm
 
-## Installation
+### Install and start
 
 ```bash
 git clone https://github.com/2403051050553/jatin-portfolio.git
 cd jatin-portfolio
-npm install
-```
-
-## Development
-
-```bash
+npm ci
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173)
+Vite prints the local URL when the development server starts (by default, `http://localhost:5173`).
 
-## Build
+## Quality checks
 
 ```bash
+npm run lint
 npm run build
+```
+
+`npm run build` runs the TypeScript project build before producing the optimized Vite output in `dist/`.
+
+To preview a production build locally:
+
+```bash
+npm run preview
+```
+
+GitHub Actions runs lint and build checks on pushes and pull requests.
+
+## Repository layout
+
+```text
+public/
+└── assets/           # Public images and downloadable documents
+src/
+├── assets/           # Imported application assets
+├── components/       # Portfolio sections and UI components
+├── data/             # Portfolio content
+├── types/            # Shared TypeScript types
+├── App.tsx
+└── main.tsx
 ```
 
 ## Deployment
 
-Deployed on Vercel - auto-deploys on git push to main
-
-```bash
-npx vercel --prod --yes
-```
-
-## Project Structure
-
-```
-src/
-├── components/       # React components
-├── pages/           # Page components
-├── styles/          # Tailwind & CSS
-├── utils/           # Helper functions
-├── App.jsx          # Main app
-└── main.jsx         # Entry point
-```
-
-## Technologies Demonstrated
-
-✅ Modern React patterns  
-✅ TypeScript type safety  
-✅ Responsive design  
-✅ Build optimization  
-✅ Deployment & hosting  
-✅ Component composition  
+The live site is hosted on Vercel. Deployment configuration is maintained by the linked Vercel project; use its configured production branch and environment settings rather than deploying from an unreviewed local checkout.
 
 ## License
 
-MIT
+This project is released under the MIT License.
 
----
+## Contact
 
-**Portfolio**: [jatin-ahuja-portfolio.vercel.app](https://jatin-ahuja-portfolio.vercel.app)  
-**GitHub**: [2403051050553](https://github.com/2403051050553)
+- [GitHub](https://github.com/2403051050553)
+- [LinkedIn](https://www.linkedin.com/in/jatin-tehalram-ahuja-0386b5390/)
+- [Email](mailto:2403051050553@paruluniversity.ac.in)
