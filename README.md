@@ -5,17 +5,23 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-6-3178c6?logo=typescript)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-8-646cff?logo=vite)](https://vite.dev/)
 
-A personal portfolio built with React and TypeScript to present projects, technical interests, and professional background.
+A responsive, dark portfolio for **Jatin Tehalram Ahuja**, a Computer Science Engineering student at Parul University with expected graduation in 2028.
 
 **Live site:** [jatin-portfolio-eight-psi.vercel.app](https://jatin-portfolio-eight-psi.vercel.app)
 
 ## Highlights
 
-- Responsive portfolio layout with project, education, certification, and contact sections
-- Live GitHub contribution graph hosted by GitHub, with no hard-coded activity totals
-- Resume and recruiter-view experiences
-- Contact form integration
+- Recruiter-friendly introduction, education, skills, selected projects, and contact links
+- Project details link to their corresponding public repositories
+- Responsive layout with keyboard-accessible navigation and reduced visual clutter
+- No invented activity totals, rankings, or proficiency scores
 - TypeScript build checks and Oxlint
+
+## Featured work
+
+- **Student Grade Management API:** Java 17 and Spring Boot REST API with MySQL persistence
+- **Java DSA Practice:** Java implementations of common data-structure and algorithm patterns
+- **YouTube-Inspired Video Homepage:** Static HTML and CSS layout exercise; search and video hosting are not implemented
 
 ## Tech stack
 
@@ -24,16 +30,14 @@ A personal portfolio built with React and TypeScript to present projects, techni
 - Tailwind CSS 4
 - Lucide React
 - Node.js 22 or newer
-- Vercel deployment
+- Vercel
 
 ## Run locally
 
-### Prerequisites
+### Requirements
 
-- Node.js 22 or newer (the repository includes an `.nvmrc`)
+- Node.js 22 or newer (see `.nvmrc`)
 - npm
-
-### Install and start
 
 ```bash
 git clone https://github.com/2403051050553/jatin-portfolio.git
@@ -42,7 +46,7 @@ npm ci
 npm run dev
 ```
 
-Vite prints the local URL when the development server starts (by default, `http://localhost:5173`).
+Vite prints the local URL (by default, `http://localhost:5173`).
 
 ## Quality checks
 
@@ -51,37 +55,11 @@ npm run lint
 npm run build
 ```
 
-`npm run build` runs the TypeScript project build before producing the optimized Vite output in `dist/`.
-
-To preview a production build locally:
-
-```bash
-npm run preview
-```
-
-GitHub Actions runs lint and build checks on pushes and pull requests.
-
-## Repository layout
-
-```text
-public/
-└── assets/           # Public images and downloadable documents
-src/
-├── assets/           # Imported application assets
-├── components/       # Portfolio sections and UI components
-├── data/             # Portfolio content
-├── types/            # Shared TypeScript types
-├── App.tsx
-└── main.tsx
-```
+`npm run build` runs the TypeScript project build before creating the optimized production output in `dist/`.
 
 ## Deployment
 
-The live site is hosted on Vercel. Deployment configuration is maintained by the linked Vercel project; use its configured production branch and environment settings rather than deploying from an unreviewed local checkout.
-
-## License
-
-This project is released under the MIT License.
+The site is hosted on Vercel. When the linked GitHub repository's configured production branch receives a change, Vercel builds and publishes the site using that project's deployment settings.
 
 ## Contact
 
