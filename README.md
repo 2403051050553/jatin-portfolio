@@ -7,7 +7,7 @@
 
 A personal portfolio built with React and TypeScript to present projects, technical interests, and professional background.
 
-**Live site:** [jatin-ahuja-portfolio.vercel.app](https://jatin-ahuja-portfolio.vercel.app)
+**Live site:** [jatin-portfolio-eight-psi.vercel.app](https://jatin-portfolio-eight-psi.vercel.app)
 
 ## Highlights
 
