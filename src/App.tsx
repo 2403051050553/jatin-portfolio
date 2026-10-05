@@ -1,41 +1,68 @@
 import {
   ArrowDown,
   ArrowUpRight,
+  BookOpen,
   Braces,
   Code2,
   Database,
+  ExternalLink,
+  GitCommitHorizontal,
   GraduationCap,
   Mail,
+  MapPin,
+  Star,
   Terminal,
+  Users,
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './components/Icons';
 
 const projects = [
   {
     number: '01',
-    name: 'Student Grade Management API',
-    description:
-      'A Java 17 and Spring Boot REST API for managing students and grades, with request validation, JWT login, and MySQL persistence.',
-    stack: ['Java 17', 'Spring Boot', 'MySQL', 'Maven'],
-    href: 'https://github.com/2403051050553/student-grade-management',
+    name: 'Youtube-Clone',
+    description: 'Video-browsing homepage layout built with HTML and CSS, with original local SVG assets.',
+    stack: ['HTML', 'CSS'],
+    href: 'https://github.com/2403051050553/Youtube-Clone',
     accent: 'cyan',
   },
   {
     number: '02',
-    name: 'Java DSA Practice',
-    description:
-      'A tested set of Java implementations for data-structure and algorithm patterns. Practice examples are clearly distinguished from publicly verifiable submissions.',
-    stack: ['Java 17', 'Algorithms', 'JUnit', 'Maven'],
-    href: 'https://github.com/2403051050553/LeetCode-Solutions',
+    name: 'NETFLIX-CLONE',
+    description: 'Static streaming-service landing page concept built with HTML and CSS.',
+    stack: ['HTML', 'CSS'],
+    href: 'https://github.com/2403051050553/NETFLIX-CLONE',
     accent: 'violet',
   },
   {
     number: '03',
-    name: 'YouTube-Inspired Video Homepage',
-    description:
-      'A static HTML and CSS layout exercise with a video grid, search area, sidebar, and original illustrative SVG artwork. Search and video hosting are not implemented.',
-    stack: ['HTML', 'CSS', 'Responsive UI'],
-    href: 'https://github.com/2403051050553/Youtube-Clone',
+    name: 'jatin-portfolio',
+    description: 'Personal portfolio built with React, TypeScript, Vite, and Tailwind CSS.',
+    stack: ['TypeScript', 'React', 'Vite'],
+    href: 'https://github.com/2403051050553/jatin-portfolio',
+    accent: 'emerald',
+  },
+  {
+    number: '04',
+    name: 'LeetCode-Solutions',
+    description: 'Java algorithm practice with unit-tested array, string, and binary-search implementations.',
+    stack: ['Java', 'Algorithms', 'JUnit'],
+    href: 'https://github.com/2403051050553/LeetCode-Solutions',
+    accent: 'violet',
+  },
+  {
+    number: '05',
+    name: 'SPOTIFY-CLONE',
+    description: 'Static Spotify-inspired music landing page concept built with HTML and CSS.',
+    stack: ['HTML', 'CSS'],
+    href: 'https://github.com/2403051050553/SPOTIFY-CLONE',
+    accent: 'cyan',
+  },
+  {
+    number: '06',
+    name: 'student-grade-management',
+    description: 'Java 17 Spring Boot REST API for managing students and grades with JWT authentication and MySQL.',
+    stack: ['Java', 'Spring Boot', 'MySQL'],
+    href: 'https://github.com/2403051050553/student-grade-management',
     accent: 'emerald',
   },
 ];
@@ -44,328 +71,410 @@ const skillGroups = [
   {
     icon: Braces,
     title: 'Languages',
-    items: ['Java', 'JavaScript', 'TypeScript', 'Python', 'SQL', 'HTML', 'CSS'],
+    items: ['Java', 'Python', 'JavaScript', 'TypeScript', 'SQL', 'HTML', 'CSS'],
   },
   {
     icon: Code2,
-    title: 'Web & backend',
-    items: ['React', 'Spring Boot', 'Node.js', 'REST APIs', 'Vite'],
+    title: 'Frontend',
+    items: ['React', 'HTML5', 'CSS3', 'Vite'],
+  },
+  {
+    icon: Terminal,
+    title: 'Backend',
+    items: ['Spring Boot', 'Node.js', 'REST APIs'],
   },
   {
     icon: Database,
-    title: 'Data & tools',
-    items: ['MySQL', 'MongoDB', 'Git', 'GitHub Actions', 'Maven', 'Postman'],
+    title: 'Database',
+    items: ['MySQL', 'MongoDB', 'SQL'],
+  },
+  {
+    icon: Terminal,
+    title: 'Tools',
+    items: ['Git', 'GitHub', 'GitHub Actions', 'Maven', 'Postman'],
   },
 ];
 
 const contacts = [
-  {
-    label: 'GitHub',
-    href: 'https://github.com/2403051050553',
-  },
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/jatin-tehalram-ahuja-0386b5390/',
-  },
-  {
-    label: 'Email',
-    href: 'mailto:2403051050553@paruluniversity.ac.in',
-  },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jatin-tehalram-ahuja-0386b5390/' },
+  { label: 'Email', href: 'mailto:2403051050553@paruluniversity.ac.in' },
+  { label: 'LeetCode', href: 'https://leetcode.com/u/2403051050553/' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@JATINTEHALRAMAHUJA' },
+  { label: 'Portfolio', href: 'https://jatin-portfolio-eight-psi.vercel.app' },
 ];
+
+const contributionLevels: Record<string, number> = {
+  '2025-11-01': 1,
+  '2025-11-04': 2,
+  '2025-11-07': 1,
+  '2025-11-12': 1,
+  '2025-11-14': 1,
+  '2025-11-26': 1,
+  '2025-12-03': 1,
+  '2025-12-05': 1,
+  '2025-12-12': 1,
+  '2025-12-13': 1,
+  '2025-12-21': 1,
+  '2025-12-24': 1,
+  '2025-12-28': 1,
+  '2026-02-07': 1,
+  '2026-03-03': 1,
+  '2026-05-27': 2,
+  '2026-05-28': 3,
+  '2026-05-29': 1,
+  '2026-05-30': 4,
+  '2026-05-31': 2,
+  '2026-06-02': 2,
+  '2026-06-04': 1,
+  '2026-06-06': 1,
+  '2026-08-10': 4,
+  '2026-09-24': 4,
+  '2026-10-01': 3,
+  '2026-10-02': 1,
+  '2026-10-03': 1,
+  '2026-10-04': 4,
+};
+
+const contributionWeeks = Array.from({ length: 53 }, (_, weekIndex) =>
+  Array.from({ length: 7 }, (_, dayIndex) => {
+    const date = new Date(Date.UTC(2025, 9, 5 + weekIndex * 7 + dayIndex));
+    const dateKey = date.toISOString().slice(0, 10);
+    return dateKey <= '2026-10-05'
+      ? { dateKey, level: contributionLevels[dateKey] ?? 0 }
+      : null;
+  }),
+);
 
 function App() {
   return (
-    <div className="min-h-screen overflow-hidden text-slate-100">
-      <header className="sticky top-0 z-20 border-b border-white/[0.08] bg-[#080b12]/85 backdrop-blur-xl">
+    <div className="min-h-screen bg-[#080b10] text-slate-200">
+      <header className="sticky top-0 z-30 border-b border-white/[0.09] bg-[#0b0f15]/95 backdrop-blur">
         <nav
           aria-label="Main navigation"
-          className="mx-auto flex h-[68px] max-w-6xl items-center justify-between px-5 sm:px-8"
+          className="mx-auto flex h-9 max-w-[1440px] items-center gap-4 px-3 sm:px-4"
         >
-          <a
-            href="#home"
-            className="flex items-center gap-3 font-semibold tracking-tight text-white"
-          >
-            <span className="flex size-9 items-center justify-center rounded-xl border border-cyan-300/20 bg-cyan-300/[0.08] font-mono text-sm text-cyan-200">
-              JA
-            </span>
-            <span>Jatin Ahuja</span>
+          <a href="#home" aria-label="Jatin Ahuja home" className="shrink-0 text-white">
+            <GithubIcon className="size-5" />
           </a>
-          <div className="hidden items-center gap-7 text-sm text-slate-400 sm:flex">
-            <a className="transition hover:text-white" href="#work">
-              Work
-            </a>
-            <a className="transition hover:text-white" href="#skills">
-              Skills
-            </a>
-            <a className="transition hover:text-white" href="#about">
-              About
-            </a>
-            <a className="transition hover:text-white" href="#contact">
-              Contact
-            </a>
+          <a
+            href="https://github.com/search"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden h-7 min-w-40 items-center justify-between rounded-md border border-white/10 bg-[#080b10] px-2 text-[10px] text-slate-500 sm:flex"
+          >
+            <span>Search or jump to...</span>
+            <span className="rounded border border-white/10 px-1.5 py-0.5 font-mono text-[10px]">/</span>
+          </a>
+          <div className="flex min-w-0 flex-1 items-center gap-3 overflow-x-auto whitespace-nowrap text-[10px] font-medium text-slate-300 sm:gap-4">
+            <a className="transition hover:text-white" href="https://github.com/pulls">Pull requests</a>
+            <a className="transition hover:text-white" href="https://github.com/issues">Issues</a>
+            <a className="transition hover:text-white" href="https://github.com/codespaces">Codespaces</a>
+            <a className="transition hover:text-white" href="https://github.com/marketplace">Marketplace</a>
+            <a className="transition hover:text-white" href="https://github.com/explore">Explore</a>
           </div>
           <a
             href="https://github.com/2403051050553"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2 text-xs font-medium text-slate-200 transition hover:border-cyan-300/40 hover:text-cyan-100"
+            className="flex shrink-0 items-center gap-1.5 text-[10px] text-slate-300 transition hover:text-white"
           >
-            <GithubIcon className="size-4" />
-            GitHub
-            <ArrowUpRight size={13} aria-hidden="true" />
+            <span className="hidden sm:inline">Open GitHub</span>
+            <ArrowUpRight size={14} aria-hidden="true" />
           </a>
         </nav>
       </header>
 
-      <main>
-        <section
-          id="home"
-          className="relative isolate scroll-mt-24 px-5 pb-20 pt-16 sm:px-8 sm:pt-24 lg:pb-28 lg:pt-28"
-        >
-          <div className="pointer-events-none absolute -left-40 top-0 -z-10 size-[420px] rounded-full bg-cyan-500/[0.08] blur-[110px]" />
-          <div className="pointer-events-none absolute -right-32 top-20 -z-10 size-[400px] rounded-full bg-violet-500/[0.09] blur-[110px]" />
-
-          <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
-            <div>
-              <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-cyan-200/15 bg-cyan-200/[0.06] px-3 py-1.5 text-xs font-medium text-cyan-100">
-                <span className="size-1.5 rounded-full bg-cyan-300" />
-                Computer Science Engineering Student
-              </div>
-
-              <h1 className="max-w-3xl text-4xl font-semibold tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl">
-                Hi, I&apos;m Jatin
-                <span className="mt-2 block bg-gradient-to-r from-cyan-200 via-sky-300 to-violet-300 bg-clip-text text-transparent">
-                  I build software
-                </span>
-              </h1>
-
-              <p className="mt-7 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
-                I&apos;m studying Computer Science Engineering at Parul
-                University, where I&apos;m building practical projects and
-                strengthening my foundations in Java, backend development,
-                full-stack web development, and problem solving.
-              </p>
-
-              <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-400">
-                <span className="inline-flex items-center gap-2">
-                  <GraduationCap size={16} className="text-cyan-200" aria-hidden="true" />
-                  Parul University
-                </span>
-                <span aria-hidden="true" className="text-slate-700">/</span>
-                <span>Expected graduation: 2028</span>
-              </div>
-
-              <div className="mt-9 flex flex-wrap gap-3">
-                <a
-                  href="#work"
-                  className="inline-flex items-center gap-2 rounded-xl bg-cyan-200 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
-                >
-                  Explore my work
-                  <ArrowDown size={16} aria-hidden="true" />
-                </a>
-                <a
-                  href="mailto:2403051050553@paruluniversity.ac.in"
-                  className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-white/20 hover:bg-white/[0.06]"
-                >
-                  <Mail size={16} aria-hidden="true" />
-                  Get in touch
-                </a>
-              </div>
-            </div>
-
-            <aside
-              aria-label="Profile summary"
-              className="relative mx-auto w-full max-w-md rounded-2xl border border-white/10 bg-[#0d1320]/90 p-5 shadow-[0_28px_100px_-50px_rgba(56,189,248,0.4)] sm:p-6"
-            >
-              <div className="flex items-center gap-3 border-b border-white/[0.08] pb-4">
-                <img
-                  src="https://github.com/2403051050553.png"
-                  alt="Jatin Tehalram Ahuja"
-                  className="size-14 rounded-xl border border-white/10 object-cover"
-                  width="56"
-                  height="56"
-                />
-                <div>
-                  <p className="font-semibold text-white">Jatin Tehalram Ahuja</p>
-                  <p className="mt-1 text-xs text-slate-400">Student developer · India</p>
-                </div>
-              </div>
-
-              <div className="mt-5 flex items-center gap-2 font-mono text-xs text-slate-500">
-                <Terminal size={14} className="text-cyan-200" aria-hidden="true" />
-                <span>profile.summary</span>
-              </div>
-              <div className="mt-3 rounded-xl border border-white/[0.06] bg-[#080b12] p-4 font-mono text-xs leading-6 sm:text-sm">
-                <p><span className="text-violet-300">const</span> <span className="text-cyan-200">student</span> = {'{'}</p>
-                <p className="pl-4 text-slate-300">university: <span className="text-emerald-200">&quot;Parul University&quot;</span>,</p>
-                <p className="pl-4 text-slate-300">degree: <span className="text-emerald-200">&quot;Computer Science Engineering&quot;</span>,</p>
-                <p className="pl-4 text-slate-300">graduation: <span className="text-amber-200">2028</span>,</p>
-                <p className="pl-4 text-slate-300">interests: [<span className="text-emerald-200">&quot;Java&quot;</span>, <span className="text-emerald-200">&quot;Web&quot;</span>, <span className="text-emerald-200">&quot;DSA&quot;</span>]</p>
-                <p>{'}'};</p>
-              </div>
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                {['Java', 'Spring Boot', 'React', 'TypeScript'].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-md border border-white/[0.08] bg-white/[0.035] px-2.5 py-1 text-[11px] font-medium text-slate-300"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </aside>
-          </div>
-        </section>
-
-        <section id="work" className="scroll-mt-20 border-y border-white/[0.06] bg-white/[0.015] px-5 py-20 sm:px-8 lg:py-24">
-          <div className="mx-auto max-w-6xl">
-            <div className="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-              <div>
-                <p className="font-mono text-xs uppercase tracking-[0.2em] text-cyan-200">Selected work</p>
-                <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Projects I&apos;ve built</h2>
-              </div>
+      <div className="portfolio-layout mx-auto grid max-w-[1440px] gap-4 px-3 py-4 sm:px-2 md:grid-cols-[148px_minmax(0,1fr)_96px] md:gap-2 md:py-0 lg:grid-cols-[205px_minmax(0,1fr)_145px] lg:gap-5 lg:px-8">
+        <aside className="space-y-4 md:sticky md:top-[48px] md:self-start md:pt-3">
+          <div>
+            <div className="relative mx-auto w-fit lg:mx-0">
+              <img
+                src="https://github.com/2403051050553.png"
+                alt="Jatin Tehalram Ahuja"
+                width="240"
+                height="240"
+                className="size-[128px] rounded-full border border-white/10 object-cover shadow-xl lg:size-[190px]"
+              />
               <a
-                href="https://github.com/2403051050553?tab=repositories"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-slate-400 transition hover:text-cyan-100"
+                href="https://github.com/2403051050553"
+                aria-label="Open Jatin's GitHub profile"
+                className="absolute bottom-2 right-1 flex size-8 items-center justify-center rounded-full border border-white/10 bg-[#161b22] text-slate-300 transition hover:text-white"
               >
-                Browse all repositories <ArrowUpRight size={15} aria-hidden="true" />
+                <Code2 size={15} aria-hidden="true" />
               </a>
             </div>
-
-            <div className="grid gap-4 lg:grid-cols-3">
-              {projects.map((project) => (
-                <article
-                  key={project.number}
-                  className="group flex min-h-[270px] flex-col rounded-2xl border border-white/[0.08] bg-[#0b101a]/90 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/25 hover:bg-[#0e1623]"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className={`font-mono text-xs ${project.accent === 'cyan' ? 'text-cyan-200' : project.accent === 'violet' ? 'text-violet-200' : 'text-emerald-200'}`}>
-                      /{project.number}
-                    </span>
-                    <Code2 size={17} className="text-slate-500 transition group-hover:text-cyan-200" aria-hidden="true" />
-                  </div>
-                  <h3 className="mt-8 text-lg font-semibold leading-snug text-white">{project.name}</h3>
-                  <p className="mt-3 flex-1 text-sm leading-6 text-slate-400">{project.description}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {project.stack.map((item) => (
-                      <span key={item} className="rounded-md bg-white/[0.045] px-2 py-1 text-[10px] text-slate-300">{item}</span>
-                    ))}
-                  </div>
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-medium text-slate-300 transition hover:text-cyan-100"
-                  >
-                    View repository <ArrowUpRight size={15} aria-hidden="true" />
-                  </a>
-                </article>
-              ))}
-            </div>
+            <h1 className="mt-3 text-center text-base font-semibold tracking-tight text-white lg:text-left lg:text-xl">
+              Jatin Tehalram Ahuja
+            </h1>
+            <p className="text-center text-sm text-slate-400 lg:text-left">JatinAhuja</p>
+            <p className="mt-1 text-center text-[10px] text-slate-500 lg:text-left lg:text-xs">2 followers</p>
+            <p className="mt-2 text-center text-xs leading-4 text-slate-300 lg:text-left lg:text-sm lg:leading-5">
+              B.Tech CSE student at Parul University. Aspiring software engineer building full-stack applications.
+            </p>
+            <a
+              href="mailto:2403051050553@paruluniversity.ac.in"
+              className="mt-4 flex h-9 w-full items-center justify-center gap-2 rounded-md border border-white/10 bg-[#171b22] text-sm font-medium text-slate-200 shadow-sm transition hover:border-white/20 hover:bg-[#202630]"
+            >
+              <Mail size={15} aria-hidden="true" />
+              Contact
+            </a>
           </div>
-        </section>
 
-        <section id="skills" className="scroll-mt-20 px-5 py-20 sm:px-8 lg:py-24">
-          <div className="mx-auto max-w-6xl">
-            <div className="mb-10">
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-violet-200">Tools I work with</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Learning by building</h2>
-              <p className="mt-3 max-w-xl text-sm leading-6 text-slate-400">
-                A snapshot of the languages and technologies I&apos;ve used in my projects and practice.
-              </p>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-3">
-              {skillGroups.map(({ icon: Icon, title, items }) => (
-                <div key={title} className="rounded-2xl border border-white/[0.08] bg-[#0b101a]/80 p-6">
-                  <div className="flex items-center gap-3">
-                    <span className="flex size-9 items-center justify-center rounded-lg border border-cyan-200/10 bg-cyan-200/[0.06] text-cyan-100">
-                      <Icon size={17} aria-hidden="true" />
-                    </span>
-                    <h3 className="font-semibold text-white">{title}</h3>
-                  </div>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {items.map((item) => (
-                      <span key={item} className="rounded-lg border border-white/[0.07] bg-white/[0.025] px-3 py-1.5 text-xs text-slate-300">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="grid grid-cols-2 gap-2 text-[10px] text-slate-400 lg:grid-cols-1 lg:text-xs">
+            <p className="flex items-center gap-2">
+              <GraduationCap size={15} className="shrink-0 text-slate-500" aria-hidden="true" />
+              Parul University
+            </p>
+            <p className="flex items-center gap-2">
+              <MapPin size={15} className="shrink-0 text-slate-500" aria-hidden="true" />
+              Vadodara, Gujarat, India
+            </p>
+            <a className="flex items-center gap-2 hover:text-cyan-200" href="https://github.com/2403051050553" target="_blank" rel="noreferrer">
+              <GithubIcon className="size-4 shrink-0" />
+              github.com/2403051050553
+            </a>
+            <a className="flex items-center gap-2 hover:text-cyan-200" href="https://www.linkedin.com/in/jatin-tehalram-ahuja-0386b5390/" target="_blank" rel="noreferrer">
+              <LinkedinIcon className="size-4 shrink-0" />
+              LinkedIn profile
+            </a>
           </div>
-        </section>
 
-        <section id="about" className="scroll-mt-20 px-5 pb-20 sm:px-8 lg:pb-24">
-          <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-[0.75fr_1.25fr]">
-            <div className="rounded-2xl border border-cyan-200/15 bg-gradient-to-br from-cyan-300/[0.09] to-violet-400/[0.06] p-7">
-              <GraduationCap size={22} className="text-cyan-100" aria-hidden="true" />
-              <p className="mt-6 font-mono text-xs uppercase tracking-[0.18em] text-slate-400">Education</p>
-              <h2 className="mt-3 text-2xl font-semibold leading-snug text-white">Parul University</h2>
-              <p className="mt-2 text-sm text-slate-300">Computer Science Engineering</p>
-              <p className="mt-5 inline-flex rounded-lg border border-white/10 bg-black/20 px-3 py-2 text-sm text-cyan-100">
-                Expected graduation · 2028
-              </p>
+          <section aria-labelledby="highlights-title" className="rounded-md border-2 border-amber-400/80 bg-[#0d1117] p-3">
+            <h2 id="highlights-title" className="flex items-center gap-2 text-xs font-semibold text-white lg:text-sm">
+              <Star size={15} className="text-amber-300" aria-hidden="true" />
+              Highlights
+            </h2>
+            <ul className="mt-2 space-y-1.5 text-[10px] leading-4 text-slate-300 lg:text-xs">
+              <li>Java & Spring Boot</li>
+              <li>Full-stack development</li>
+              <li>DSA & problem solving</li>
+            </ul>
+          </section>
+
+          <section aria-labelledby="community-title" className="rounded-md border-2 border-pink-400/80 bg-[#0d1117] p-3">
+            <h2 id="community-title" className="flex items-center gap-2 text-xs font-semibold text-white lg:text-sm">
+              <Users size={15} className="text-pink-300" aria-hidden="true" />
+              Communities
+            </h2>
+            <p className="mt-2 text-[10px] leading-4 text-slate-400">Learning and building with:</p>
+            <div className="mt-2 flex flex-wrap gap-1.5 text-[9px] font-semibold">
+              <span className="rounded border border-orange-400/30 bg-orange-400/10 px-1.5 py-1 text-orange-200">Java</span>
+              <span className="rounded border border-cyan-400/30 bg-cyan-400/10 px-1.5 py-1 text-cyan-200">Web</span>
+              <span className="rounded border border-violet-400/30 bg-violet-400/10 px-1.5 py-1 text-violet-200">Open source</span>
             </div>
+          </section>
+        </aside>
 
-            <div className="rounded-2xl border border-white/[0.08] bg-[#0b101a]/80 p-7 sm:p-8">
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-violet-200">A little about me</p>
-              <h2 className="mt-3 text-2xl font-semibold text-white">Curious, practical, and always learning.</h2>
-              <p className="mt-4 text-sm leading-7 text-slate-400 sm:text-base">
-                I&apos;m an undergraduate Computer Science Engineering student at
-                Parul University. I enjoy turning ideas into working projects,
-                learning how software systems fit together, and improving my
-                fundamentals through hands-on coding and DSA practice. I aim to
-                keep my work understandable, useful, and honest about what it
-                does.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-2 text-xs text-slate-300">
-                {['Java backend', 'Full-stack development', 'Problem solving', 'Testing & documentation'].map((item) => (
-                  <span key={item} className="rounded-md border border-white/[0.08] px-2.5 py-1.5">{item}</span>
-                ))}
-              </div>
+        <main id="home" className="min-w-0 space-y-3 md:space-y-1">
+          <nav aria-label="Profile sections" className="flex overflow-x-auto border-b border-white/10 text-[10px]">
+            <a href="#home" className="flex shrink-0 items-center gap-1 border-b-2 border-orange-400 px-2 py-1.5 font-medium text-white">
+              <BookOpen size={15} aria-hidden="true" /> Overview
+            </a>
+            <a href="#work" className="flex shrink-0 items-center gap-1 px-2 py-1.5 text-slate-400 transition hover:text-white">
+              <Code2 size={13} aria-hidden="true" /> Repositories <span className="rounded-full bg-white/10 px-1.5 py-0.5 text-[9px]">29</span>
+            </a>
+            <a href="#skills" className="flex shrink-0 items-center gap-1 px-2 py-1.5 text-slate-400 transition hover:text-white">
+              <Braces size={13} aria-hidden="true" /> Projects
+            </a>
+            <a href="#work" className="flex shrink-0 items-center gap-1 px-2 py-1.5 text-slate-400 transition hover:text-white">
+              <Database size={13} aria-hidden="true" /> Packages
+            </a>
+            <a href="#activity" className="flex shrink-0 items-center gap-1 px-2 py-1.5 text-slate-400 transition hover:text-white">
+              <Star size={13} aria-hidden="true" /> Stars
+            </a>
+          </nav>
+
+          <section aria-labelledby="readme-title" className="relative overflow-hidden rounded-lg border-2 border-emerald-400/90 bg-[#0d1117] p-2.5 shadow-[0_0_30px_-22px_rgba(52,211,153,0.7)] sm:p-3">
+            <div className="mb-2 flex items-center gap-2 border-b border-white/[0.08] pb-1 text-[9px] text-slate-400">
+              <BookOpen size={14} aria-hidden="true" />
+              <span>JatinAhuja</span><span>/</span><span className="text-slate-300">README.md</span>
             </div>
-          </div>
-        </section>
-
-        <section id="contact" className="scroll-mt-20 border-t border-white/[0.06] bg-[#090d16]/70 px-5 py-16 sm:px-8">
-          <div className="mx-auto flex max-w-6xl flex-col justify-between gap-8 md:flex-row md:items-center">
+            <div className="grid items-center gap-2 md:grid-cols-[1.4fr_0.6fr]">
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-cyan-200">Get in touch</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Let&apos;s connect.</h2>
-              <p className="mt-3 text-sm text-slate-400">Find my work, connect professionally, or send me a message.</p>
+            <h2 id="readme-title" className="text-base font-semibold leading-tight text-white sm:text-lg md:whitespace-nowrap md:text-[17px] lg:text-xl">
+              Hi <span aria-hidden="true">👋</span>, I&apos;m <span className="text-sky-400">Jatin Tehalram Ahuja</span>
+            </h2>
+            <p className="mt-1 text-[10px] font-medium leading-4 text-slate-200 sm:text-xs">
+              B.Tech CSE Student at Parul University
+            </p>
+            <p className="mt-1.5 text-[10px] leading-4 text-slate-400 sm:text-xs">
+              Building useful Java APIs and web projects; learning full-stack development and DSA.
+            </p>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <img
+              src="https://raw.githubusercontent.com/2403051050553/2403051050553/main/profile-banner.svg"
+              alt="Jatin's developer profile banner"
+              className="hidden max-h-24 w-full rounded-md object-contain md:block"
+            />
+            </div>
+            <div className="mt-2 flex flex-wrap gap-1">
               {contacts.map(({ label, href }) => (
                 <a
                   key={label}
                   href={href}
                   target={label === 'Email' ? undefined : '_blank'}
                   rel={label === 'Email' ? undefined : 'noreferrer'}
-                  className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm font-medium text-slate-200 transition hover:border-cyan-200/30 hover:text-cyan-100"
+                  className="inline-flex items-center gap-1 rounded-md border border-white/10 bg-[#161b22] px-1.5 py-0.5 text-[9px] text-slate-200 transition hover:border-sky-300/40 hover:text-sky-200"
                 >
-                  {label === 'GitHub' ? (
-                    <GithubIcon className="size-4" />
-                  ) : label === 'LinkedIn' ? (
-                    <LinkedinIcon className="size-4" />
+                  {label === 'LinkedIn' ? (
+                    <LinkedinIcon className="size-2.5" />
+                  ) : label === 'Email' ? (
+                    <Mail size={10} aria-hidden="true" />
                   ) : (
-                    <Mail size={16} aria-hidden="true" />
+                    <ExternalLink size={10} aria-hidden="true" />
                   )}
                   {label}
-                  {label !== 'Email' && <ArrowUpRight size={13} aria-hidden="true" />}
+                  {label !== 'Email' && <ArrowUpRight size={9} aria-hidden="true" />}
                 </a>
               ))}
+              <a href="https://github.com/2403051050553" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-md border border-white/10 bg-[#161b22] px-1.5 py-0.5 text-[9px] text-slate-200 transition hover:border-sky-300/40 hover:text-sky-200">
+                <GithubIcon className="size-2.5" /> GitHub <ArrowUpRight size={9} aria-hidden="true" />
+              </a>
             </div>
-          </div>
-          <div className="mx-auto mt-12 max-w-6xl border-t border-white/[0.06] pt-5 text-xs text-slate-500">
+          </section>
+
+          <section id="skills" aria-labelledby="skills-title" className="scroll-mt-20 rounded-lg border-2 border-amber-400/90 bg-[#0d1117] p-3">
+            <div className="flex items-center gap-2">
+              <Terminal size={17} className="text-amber-300" aria-hidden="true" />
+              <h2 id="skills-title" className="text-lg font-semibold text-white">Tech Stack</h2>
+            </div>
+            <div className="mt-1 divide-y divide-white/[0.07]">
+              {skillGroups.map(({ icon: Icon, title, items }) => (
+                <div key={title} className="grid gap-1 py-0.5 first:pt-0 last:pb-0 sm:grid-cols-[110px_1fr] sm:items-start lg:grid-cols-[140px_1fr]">
+                  <h3 className="flex items-center gap-1.5 text-[9px] font-medium text-slate-400 sm:pt-0.5">
+                    <Icon size={14} aria-hidden="true" /> {title}
+                  </h3>
+                  <div className="flex flex-wrap gap-1">
+                    {items.map((item) => (
+                      <span key={item} className="rounded-md border border-white/[0.08] bg-[#161b22] px-1.5 py-0 text-[8px] text-slate-300">{item}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section id="stats" aria-labelledby="stats-title" className="scroll-mt-20 rounded-lg border-2 border-violet-400/90 bg-[#0d1117] p-3">
+            <div className="mb-1 flex items-center gap-2">
+              <GitCommitHorizontal size={17} className="text-violet-300" aria-hidden="true" />
+              <h2 id="stats-title" className="text-base font-semibold text-white">GitHub Stats</h2>
+            </div>
+            <div className="grid gap-2 sm:grid-cols-3">
+              <div className="rounded-md border border-white/[0.08] bg-[#101720] p-1.5">
+                <p className="text-[9px] text-slate-400">Contributions</p>
+                <p className="mt-0.5 text-lg font-semibold text-white">159</p>
+                <p className="text-[8px] text-slate-500">In the last year</p>
+              </div>
+              <div className="rounded-md border border-white/[0.08] bg-[#101720] p-1.5">
+                <p className="text-[9px] text-slate-400">Public repos</p>
+                <p className="mt-0.5 text-lg font-semibold text-white">29</p>
+                <p className="text-[8px] text-slate-500">Projects & practice</p>
+              </div>
+              <div className="rounded-md border border-white/[0.08] bg-[#101720] p-1.5">
+                <p className="text-[9px] text-slate-400">Followers</p>
+                <p className="mt-0.5 text-lg font-semibold text-white">2</p>
+                <p className="text-[8px] text-slate-500">On GitHub</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="work" aria-labelledby="work-title" className="scroll-mt-20 rounded-lg border-2 border-sky-400/90 bg-[#0d1117] p-2">
+            <div className="mb-1 flex flex-wrap items-center justify-between gap-3">
+              <div className="flex items-center gap-1.5">
+                <Star size={17} className="text-sky-300" aria-hidden="true" />
+                <h2 id="work-title" className="text-lg font-semibold text-white">Pinned Repositories</h2>
+              </div>
+              <a href="https://github.com/2403051050553?tab=repositories" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-[9px] text-slate-400 transition hover:text-sky-200">
+                Browse all <ExternalLink size={13} aria-hidden="true" />
+              </a>
+            </div>
+            <div className="grid gap-2 md:grid-cols-2">
+              {projects.map((project) => (
+                <article
+                  key={project.number}
+                  className="group flex min-h-0 flex-col rounded-md border border-white/[0.12] bg-[#0b1017] p-1 transition hover:border-sky-300/40 hover:bg-[#101720]"
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <a href={project.href} target="_blank" rel="noreferrer" className="line-clamp-1 text-[9px] font-semibold leading-3 text-sky-300 hover:underline">
+                      {project.name}
+                    </a>
+                    <span className="shrink-0 rounded-full border border-white/10 px-1 py-0 text-[7px] text-slate-500">Public</span>
+                  </div>
+                  <p className="mt-0.5 line-clamp-1 text-[8px] leading-[9px] text-slate-400">{project.description}</p>
+                  <div className="mt-0.5 flex flex-wrap gap-0.5">
+                    {project.stack.slice(0, 3).map((item) => (
+                      <span key={item} className={`rounded-full px-1 py-0 text-[7px] ${project.accent === 'cyan' ? 'bg-cyan-300/10 text-cyan-200' : project.accent === 'violet' ? 'bg-violet-300/10 text-violet-200' : 'bg-emerald-300/10 text-emerald-200'}`}>
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section id="activity" aria-labelledby="activity-title" className="scroll-mt-20 rounded-lg border-2 border-pink-400/90 bg-[#0d1117] p-1.5">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <h2 id="activity-title" className="text-sm font-semibold text-white">159 contributions in the last year</h2>
+                <div aria-hidden="true" className="hidden items-center gap-0.5 sm:flex">
+                  {['bg-[#161b22]', 'bg-[#0e4429]', 'bg-[#006d32]', 'bg-[#26a641]', 'bg-[#39d353]'].map((color) => (
+                    <span key={color} className={`size-[6px] rounded-[2px] ${color}`} />
+                  ))}
+                </div>
+              </div>
+              <a href="https://github.com/2403051050553" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-[9px] text-slate-400 transition hover:text-pink-200">
+                View profile <ArrowUpRight size={13} aria-hidden="true" />
+              </a>
+            </div>
+            <div className="mt-1 overflow-x-auto rounded-md border border-white/[0.08] bg-[#080b10] p-1">
+              <div className="min-w-[390px]">
+                <div className="mb-1 flex justify-between px-1 text-[9px] text-slate-500">
+                  {['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'].map((month, index) => (
+                    <span key={`${month}-${index}`}>{month}</span>
+                  ))}
+                </div>
+                <div
+                  role="img"
+                  aria-label="GitHub contribution heatmap, showing 159 contributions in the last year"
+                  className="grid auto-cols-[4px] grid-flow-col grid-rows-7 gap-[2px]"
+                >
+                  {contributionWeeks.flatMap((week, weekIndex) =>
+                    week.map((day, dayIndex) => day ? (
+                      <span
+                        key={day.dateKey}
+                        title={`${day.dateKey}: contribution level ${day.level}`}
+                        className={`size-[4px] rounded-[2px] ${day.level === 0 ? 'bg-[#161b22]' : day.level === 1 ? 'bg-[#0e4429]' : day.level === 2 ? 'bg-[#006d32]' : day.level === 3 ? 'bg-[#26a641]' : 'bg-[#39d353]'}`}
+                      />
+                    ) : (
+                      <span key={`empty-${weekIndex}-${dayIndex}`} className="size-[4px]" aria-hidden="true" />
+                    )),
+                  )}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <footer className="flex flex-wrap items-center justify-between gap-3 px-1 py-3 text-xs text-slate-500">
             <p>Jatin Tehalram Ahuja · Built with React and TypeScript.</p>
-          </div>
-        </section>
-      </main>
+            <a href="#home" className="inline-flex items-center gap-1 transition hover:text-white">Back to top <ArrowDown size={12} className="rotate-180" aria-hidden="true" /></a>
+          </footer>
+        </main>
+        <aside aria-label="Portfolio section guide" className="hidden space-y-6 pt-[58px] md:block">
+          {[
+            { title: 'Profile README', color: 'border-emerald-400 bg-emerald-400 text-emerald-950', notes: ['Introduction', 'Your focus areas', 'Tech stack', 'Links & profile'] },
+            { title: 'Tech Stack Section', color: 'border-amber-400 bg-amber-400 text-amber-950', notes: ['Show your skills', 'Use icons & badges', 'Keep it clean'] },
+            { title: 'GitHub Stats Section', color: 'border-violet-400 bg-violet-400 text-violet-950', notes: ['Contribution graph', 'Profile stats', 'Languages & tools'] },
+            { title: 'Pinned Repositories', color: 'border-sky-400 bg-sky-400 text-sky-950', notes: ['Show 6 best projects', 'Each with description', 'Tech stack', 'Relevant repositories'] },
+            { title: 'Contribution Graph', color: 'border-pink-400 bg-pink-400 text-pink-950', notes: ['Shows your activity', 'Consistent contributions', 'Keep it current'] },
+          ].map(({ title, color, notes }) => (
+            <section key={title} className="text-[8px] leading-3 text-slate-300 lg:text-[10px] lg:leading-4">
+              <h2 className={`mb-1 inline-block whitespace-nowrap rounded-md border px-1.5 py-1 font-semibold ${color}`}>{title}</h2>
+              <ul className="space-y-0.5">{notes.map((note) => <li key={note}>• {note}</li>)}</ul>
+            </section>
+          ))}
+        </aside>
+      </div>
     </div>
   );
 }
